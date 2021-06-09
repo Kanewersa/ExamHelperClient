@@ -1,0 +1,81 @@
+$lighter: #484c5e;
+$light: #34343e;
+$medium: #2b2c34;
+$dark: #1e1e24;
+$darker: #1c1c21;
+
+/* Dropdown */
+.dropdown {
+  border: $dark 1px solid;
+  margin: 0 10px;
+  width: 90%;
+  outline: none;
+  display: inline-block;
+  background-color: $light;
+  border-radius: 2px;
+  transition: all .5s ease;
+  position: relative;
+  font-size: 14px;
+  color: white;
+
+  .drop-icon {
+    width: 16px;
+    height: 16px;
+    background-image: url("file:///App/Assets/drop-icon.png");
+  }
+
+  .select {
+    cursor: pointer;
+    display: block;
+    padding: 8px;
+
+    >i {
+      font-size: 13px;
+      color: whitesmoke;
+      cursor: pointer;
+      transition: all .3s ease-in-out;
+      float: right;
+      line-height: 20px;
+    }
+  }
+
+  .dropdown-menu {
+    border: $dark 1px solid;
+    position: absolute;
+    background-color: $light;
+    width: 100%;
+    left: 0;
+    margin-top: 1px;
+    border-radius: 0 1px 2px 2px;
+    display: none;
+    max-height: 144px;
+    overflow-y: auto;
+    z-index: 9;
+    padding: 0;
+    list-style: none;
+
+    li {
+      padding: 8px;
+      transition: all .2s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        background-color: $lighter;
+      }
+      &:active {
+        background-color: $lighter;
+      }
+    }
+  }
+}
+
+.dropdown.active {
+  &:hover {
+    background-color: $light;
+  }
+
+  .select {
+    >i {
+      transform: rotate(90deg);
+    }
+  }
+}

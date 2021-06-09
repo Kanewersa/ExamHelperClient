@@ -1,0 +1,192 @@
+<html>
+<header>
+    <link rel="stylesheet" type="text/css" href="Styles/styles.css">
+</header>
+<body>
+<div id="gallery-modal" class="modal" style="/*display: none*/">
+    <div id="send-popup" class="popup">
+        <div class="panel">
+            <div class="content">
+                <h4>Add comment (optional)</h4>
+                <input placeholder="Type here...">
+            </div>
+            <div class="footer">
+                <button>Cancel</button>
+                <button>Send</button>
+            </div>
+        </div>
+    </div>
+    <div class="close">
+        <img id="gallery-modal-close" src="Assets/Icons/x.svg" alt="Close">
+    </div>
+    <h1 id="exam-name">Exam name</h1>
+    <div class="flex">
+        <div class="search">
+            <input id="search-input" type="text" placeholder="Type here...">
+            <img src="Assets/Icons/search.svg" alt="Search">
+            <hr>
+        </div>
+    </div>
+    <div id="gallery" class="flex gallery">
+        <div class="image">
+            <img src="Assets/Images/a.jpg" alt="Test">
+            <p>Image description</p>
+        </div>
+        <div class="image">
+            <img src="Assets/Images/b.jpg" alt="Test">
+            <p>Image description</p>
+        </div>
+    </div>
+</div>
+
+<div id="question-modal" class="modal no-overflow semi-transparent" style="display: none">
+    <div class="question-view flex">
+        <div class="close">
+            <img id="question-modal-close" src="Assets/Icons/x.svg" alt="Close">
+        </div>
+        <div class="left-pane">
+            <h2>Question</h2>
+            <hr>
+            <img id="active-question-image" src="Assets/Images/a.jpg" alt="Test">
+            <p id="active-question-content">
+                The question content which was extracted from image by the AI. Lorem ipsum dolor sit amet?
+                a) Aenean sed congue turpis. b) Mauris cursus lorem sed molestie pulvinar. c) Nullam ut consequat metus, vel
+                tempus magna. d) Maecenas aliquam velit velit, non hendrerit eros laoreet vitae.
+            </p>
+        </div>
+        <div id="answers-panel" class="right-pane">
+            <h2>Answers</h2>
+            <div id="answers-holder">
+                <div class="answer">
+                    <div class="score">
+                        <img src="Assets/Icons/plus.svg" alt="Up">
+                        <p class="clicked">2</p>
+                    </div>
+                    <div class="score">
+                        <img src="Assets/Icons/minus.svg" alt="Down">
+                        <p>0</p>
+                    </div>
+                    <h3>a) Aenean sed congue turpis.</h3>
+                </div>
+                <div class="answer">
+                    <div class="score">
+                        <img src="Assets/Icons/plus.svg" alt="Up">
+                        <p>0</p>
+                    </div>
+                    <div class="score">
+                        <img src="Assets/Icons/minus.svg" alt="Down">
+                        <p>1</p>
+                    </div>
+                    <h3>b) Mauris cursus lorem sed molestie pulvinar.</h3>
+                </div>
+                <div class="answer">
+                    <div class="score">
+                        <img src="Assets/Icons/plus.svg" alt="Up">
+                        <p>0</p>
+                    </div>
+                    <div class="score">
+                        <img src="Assets/Icons/minus.svg" alt="Down">
+                        <p>0</p>
+                    </div>
+                    <h3>c) Nullam ut consequat metus, vel tempus magna.</h3>
+                </div>
+                <div class="answer">
+                    <div class="score">
+                        <img src="Assets/Icons/plus.svg" alt="Up">
+                        <p>1</p>
+                    </div>
+                    <div class="score">
+                        <img src="Assets/Icons/minus.svg" alt="Down">
+                        <p class="clicked">1</p>
+                    </div>
+                    <h3>d) Maecenas aliquam velit velit, non hendrerit eros laoreet vitae.</h3>
+                </div>
+            </div>
+            <div class="inputs">
+                <input placeholder="Provide the answer...">
+                <button>Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="loading-modal" class="modal show connecting">
+    <div id="loading-animation">
+        <div class="lds-ripple"><div></div><div></div></div>
+        <h2>Connecting to server</h2>
+    </div>
+    <div id="login-panel" class="login hidden">
+        <img src="Assets/Icons/share-2.svg" alt="Share">
+        <h2>This is the first time you connect to the server.</h2>
+        <p>Please enter your name to continue:</p>
+        <input type="text" id="name-input" placeholder="Your name or nickname.">
+        <br>
+        <button id="login-button">Continue</button>
+    </div>
+</div>
+
+
+<div id="circle" class="circle">
+</div>
+<div class="border">
+</div>
+<nav>
+    <div id="connection-off" class="connection off">
+        <img id="no-connection-img" src="Assets/Icons/cloud-lightning.svg" alt="No connection">
+        <p id="no-connection-text">No connection</p>
+    </div>
+    <div id="connection-on" class="connection on" style="display: none">
+        <img src="Assets/Icons/sun.svg" alt="Connected">
+        <p>Connected</p>
+    </div>
+    <button id="minimize-button">_</button>
+    <button id="control-button">&#10720</button>
+    <button id="close-button">X</button>
+</nav>
+
+<div class="main">
+    <div id="terms" class="terms-pane hide">
+        <h2>Terms</h2>
+    </div>
+    <div class="term-pane">
+        <div class="arrow" id="arrow">
+            <img id="icon" src="Assets/Icons/arrow.svg" alt="Arrow">
+        </div>
+        <div class="title">
+            <h1 id="active-term">Term</h1>
+            <hr>
+            <h3>Courses<img src="Assets/Icons/feather.svg" alt="Feather"></h3>
+            <div class="courses">
+                <ul id="courses">
+                </ul>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <div class="course-pane">
+        <h1 id="course-title">Select course</h1>
+        <div id="tabs-buttons" class="tabs">
+            <button class="tab active">General</button>
+            <button class="tab">Exams</button>
+        </div>
+        <div id="tabs" class="bottom-panel">
+            <div id="general" class="panel general active">
+                <h2>Instructors</h2>
+                <hr>
+                <ul id="instructors">
+                </ul>
+            </div>
+            <div class="panel exams">
+                <h2>View exams</h2>
+                <hr>
+                <div id="exams" class="flex">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="Javascript/main.js">
+</script>
+</body>
+</html>

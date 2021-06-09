@@ -1,0 +1,21 @@
+{
+  "name": "examhelper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App/index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^11.3.0",
+    "electron-packager": "^15.2.0"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "ws": "^7.4.4"
+  }
+}
